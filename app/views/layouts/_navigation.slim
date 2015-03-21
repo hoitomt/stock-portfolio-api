@@ -1,0 +1,15 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data={toggle: "collapse", target: "#navbar-main"}
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to "Stock Portfolio", root_path, class:"navbar-brand"
+    #navbar-main.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li = link_to "Portfolio", '#'
+      form.navbar-form.navbar-right role="search"
+        .form-group
+          input.form-control type="text" placeholder="Search"
+        button.btn.btn-default type="submit" Submit

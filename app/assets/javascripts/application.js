@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require ../../../vendor/assets/bootstrap-3.3.4-dist/js/bootstrap.min

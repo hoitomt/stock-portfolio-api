@@ -1,0 +1,13 @@
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :github_id
+      t.string :name
+      t.string :email
+      t.string :github_access_token
+      t.string :auth_token
+
+      t.timestamps null: false
+    end
+  end
+end
