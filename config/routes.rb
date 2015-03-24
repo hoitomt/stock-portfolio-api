@@ -15,5 +15,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :stocks do
+    get :quote
+    get :lookup
+  end
+
   get 'test', to: "pages#test"
 end
