@@ -14,7 +14,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'puma'
 gem 'dotenv-rails'
-gem 'slim'
 gem 'faraday'
 
 group :development, :test do
