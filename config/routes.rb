@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :securities
+
   root to: "pages#index"
 
   get 'github_login', to: 'pages#github_login'

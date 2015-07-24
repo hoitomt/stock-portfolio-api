@@ -3,7 +3,6 @@ StockSearch =
   stocks: null
 
   init: ->
-    console.log "Initialize Stock Search"
     @initBloodhound()
     @listenForQueries()
 
@@ -21,7 +20,6 @@ StockSearch =
       # source: @stocks.ttAdapter()
       source: (query, cb) ->
         $.get "stocks/lookup.json?query=#{query}", (data) ->
-          console.log data
           cb(data)
 
 $ ->
