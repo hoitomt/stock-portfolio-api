@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :holdings
+
   resources :securities
+  resources :transactions, only: [:index, :new, :create]
 
   root to: "pages#index"
 

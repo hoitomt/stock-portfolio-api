@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+  has_many :holdings
+  has_many :transactions
+
   validates :github_id, presence: true
   validates :auth_token, presence: true
 

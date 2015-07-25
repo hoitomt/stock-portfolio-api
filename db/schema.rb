@@ -11,16 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724035910) do
+ActiveRecord::Schema.define(version: 20150725123120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "holdings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "symbol"
+    t.decimal  "number_of_shares", precision: 16, scale: 2
+    t.decimal  "cost_basis",       precision: 16, scale: 4
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
 
   create_table "securities", force: :cascade do |t|
     t.string   "symbol"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "symbol"
+    t.decimal  "price_per_share",  precision: 16, scale: 4
+    t.decimal  "number_of_shares", precision: 16, scale: 2
+    t.decimal  "commission",       precision: 8,  scale: 2
+    t.decimal  "total",            precision: 16, scale: 4
+    t.datetime "settlement_date"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "users", force: :cascade do |t|
